@@ -23,4 +23,5 @@ class AppColors {
   ];
 
   static const Color white = Color(0xFFFFFFFF);
+  static const Color iceWhite = Color(0xFFF5F5F5);
 }
