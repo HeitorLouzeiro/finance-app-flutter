@@ -1,7 +1,6 @@
 import 'package:finance_app/common/constants/app_colors.dart';
 import 'package:finance_app/common/constants/app_text_styles.dart';
 import 'package:finance_app/common/constants/routes.dart';
-import 'package:finance_app/features/home/home.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
