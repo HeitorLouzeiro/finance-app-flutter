@@ -1,5 +1,7 @@
 import 'package:finance_app/common/constants/app_colors.dart';
 import 'package:finance_app/common/constants/app_text_styles.dart';
+import 'package:finance_app/common/constants/routes.dart';
+import 'package:finance_app/features/home/home.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -28,7 +30,7 @@ class OnboardingPage extends StatelessWidget {
             ),
             const SizedBox(height: 10.0),
             const Text(
-              'Descubra como é facil descobrir para onde vai seu dinheiro',
+              'Descubra como é facil descobrir quanto o seu dinheiro pode render',
               style: AppTextStyles.mediumText,
               textAlign: TextAlign.center,
             ),
@@ -36,6 +38,7 @@ class OnboardingPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Ação ao clicar no botão
+                Navigator.pushNamed(context, NamedRoutes.home);
               },
               child: const Text('Começar'),
             ),
