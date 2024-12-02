@@ -4,11 +4,14 @@ import 'package:flutter/material.dart'; // Importa a biblioteca de widgets do Fl
 // Define a classe CadastroInvestimentoPage como um StatelessWidget
 class CadastroInvestimentoPage extends StatelessWidget {
   // Declaração das variáveis que serão recebidas no construtor
-  final Investimento? investimento; // O investimento a ser editado (nulo se for um novo investimento)
-  final void Function(Investimento) onSave; // Função callback chamada ao salvar o investimento
+  final Investimento?
+      investimento; // O investimento a ser editado (nulo se for um novo investimento)
+  final void Function(Investimento)
+      onSave; // Função callback chamada ao salvar o investimento
 
   // Construtor da classe, recebendo o investimento e a função onSave
-  CadastroInvestimentoPage({super.key, this.investimento, required this.onSave});
+  CadastroInvestimentoPage(
+      {super.key, this.investimento, required this.onSave});
 
   // Controladores de texto para os campos de entrada
   final TextEditingController _nomeController = TextEditingController();
@@ -21,10 +24,9 @@ class CadastroInvestimentoPage extends StatelessWidget {
     // Se estiver editando um investimento existente, preenche os campos com os dados do investimento
     if (investimento != null) {
       _nomeController.text = investimento!.nome;
-      // **ERRO:** As linhas abaixo estão incorretas. Deveriam acessar as propriedades do objeto investimento, não os controladores.
-      _capitalController.text = investimento!.capitalController.text; // Incorreto
-      _aplicacaoController.text = investimento!.aplicacaoController.text; // Incorreto
-      _taxaJurosController.text = investimento!.taxaJurosController.text; // Incorreto
+      _capitalController.text = investimento!.capitalController.text;
+      _aplicacaoController.text = investimento!.aplicacaoController.text;
+      _taxaJurosController.text = investimento!.taxaJurosController.text;
     }
 
     // Constrói o layout da tela
@@ -41,10 +43,18 @@ class CadastroInvestimentoPage extends StatelessWidget {
           children: [
             // Lista de widgets filhos da Column
             // Campos de texto para nome, capital, aplicação e taxa de juros
-            _campoTexto(controller: _nomeController, label: 'Nome do Investimento', tipoTeclado: TextInputType.text),
-            _campoTexto(controller: _capitalController, label: 'Capital Inicial (R\$)'),
-            _campoTexto(controller: _aplicacaoController, label: 'Aplicação Mensal (R\$)'),
-            _campoTexto(controller: _taxaJurosController, label: 'Taxa de Juros Mensal (%)'),
+            _campoTexto(
+                controller: _nomeController,
+                label: 'Nome do Investimento',
+                tipoTeclado: TextInputType.text),
+            _campoTexto(
+                controller: _capitalController, label: 'Capital Inicial (R\$)'),
+            _campoTexto(
+                controller: _aplicacaoController,
+                label: 'Aplicação Mensal (R\$)'),
+            _campoTexto(
+                controller: _taxaJurosController,
+                label: 'Taxa de Juros Mensal (%)'),
             const SizedBox(height: 16), // Espaçamento vertical
             ElevatedButton(
               // Botão para salvar o investimento
@@ -57,7 +67,8 @@ class CadastroInvestimentoPage extends StatelessWidget {
                   aplicacao: _aplicacaoController.text,
                   taxaJuros: _taxaJurosController.text,
                 );
-                onSave(novoInvestimento); // Chama a função onSave passando o novo investimento
+                onSave(
+                    novoInvestimento); // Chama a função onSave passando o novo investimento
                 Navigator.pop(context); // Fecha a tela atual
               },
               child: const Text('Salvar'),
@@ -72,7 +83,8 @@ class CadastroInvestimentoPage extends StatelessWidget {
   Widget _campoTexto({
     required TextEditingController controller, // Controlador do campo de texto
     required String label, // Label do campo
-    TextInputType tipoTeclado = TextInputType.number, // Tipo de teclado (numérico por padrão)
+    TextInputType tipoTeclado =
+        TextInputType.number, // Tipo de teclado (numérico por padrão)
   }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
