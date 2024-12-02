@@ -32,7 +32,6 @@
 <h3 align="center">Flutter Compound Interest Calculator</h3>
 
   <p align="center">
-    project_description
     <br/>
     <br />
     <a href="https://github.com/HeitorLouzeiro/finance_app/issues">Report Bug</a>
