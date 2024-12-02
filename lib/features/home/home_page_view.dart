@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:finance_app/common/constants/routes.dart';
 import 'package:finance_app/common/widgets/custom_bottom_app_bar.dart';
 import 'package:finance_app/features/home/home_page.dart';
 import 'package:finance_app/features/wallet/wallet_page.dart';
@@ -37,26 +36,10 @@ class _HomePageViewState extends State<HomePageView> {
           WalletPage(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.indigo,
-        onPressed: () {
-          Navigator.pushNamed(context, NamedRoutes.cadastroInvestimento);
-        },
-        child: const Icon(Icons.add),
-      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: CustomBottomAppBar(
         selectedItemColor: AppColors.indigo,
         children: [
-          CustomBottomAppBarItem(
-            label: 'home',
-            primaryIcon: Icons.home,
-            secondaryIcon: Icons.home_outlined,
-            onPressed: () => pageController.jumpToPage(
-              0,
-            ),
-          ),
-          CustomBottomAppBarItem.empty(),
           CustomBottomAppBarItem(
             label: 'wallet',
             primaryIcon: Icons.account_balance_wallet,

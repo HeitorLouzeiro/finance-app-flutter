@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin<
 
     return const Scaffold(
       body: Center(
-        child: Text("Home"),
+        child: Text("Clique no botão 'wallet' para ir para a página de carteira"),
       ),
     );
   }
