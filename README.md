@@ -32,11 +32,12 @@
 <h3 align="center">Flutter Compound Interest Calculator</h3>
 
   <p align="center">
+    project_description
     <br/>
     <br />
-    <a href="https://github.com/HeitorLouzeiro/finance_app/issues">Report Bug</a>
+    <a href="https://github.com/HeitorLouzeiro/finance-app-flutter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/HeitorLouzeiro/finance_app/issues">Request Feature</a>
+    <a href="https://github.com/HeitorLouzeiro/finance-app-flutter/issues">Request Feature</a>
   </p>
 </div>
 
@@ -126,11 +127,11 @@ Flutter application that allows you to compare two different investments. The ap
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/HeitorLouzeiro/finance_app.git
+   git clone https://github.com/HeitorLouzeiro/finance-app-flutter.git
    ```
 2. Access the project folder in terminal/cmd
    ```sh
-   cd finance_app
+   cd finance-app-flutter
    ```
     
 3. Run the application.
@@ -156,7 +157,7 @@ Flutter application that allows you to compare two different investments. The ap
 
 
 
-See the [open issues](https://github.com/HeitorLouzeiro/finance_app/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/HeitorLouzeiro/finance-app-flutter/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -221,23 +222,23 @@ Distributed under the MIT License. See [LICENSE](license) for more information.
   </a> 
 </div>
 
-Project Link: [https://github.com/HeitorLouzeiro/finance_app](https://github.com/HeitorLouzeiro/finance_app)
+Project Link: [https://github.com/HeitorLouzeiro/finance-app-flutter](https://github.com/HeitorLouzeiro/finance-app-flutter)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/HeitorLouzeiro/finance_app.svg?style=for-the-badge
-[contributors-url]: https://github.com/HeitorLouzeiro/finance_app/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/HeitorLouzeiro/finance_app.svg?style=for-the-badge
-[forks-url]: https://github.com/HeitorLouzeiro/finance_app/network/members
-[stars-shield]: https://img.shields.io/github/stars/HeitorLouzeiro/finance_app.svg?style=for-the-badge
-[stars-url]: https://github.com/HeitorLouzeiro/finance_app/stargazers
-[issues-shield]: https://img.shields.io/github/issues/HeitorLouzeiro/finance_app.svg?style=for-the-badge
-[issues-url]: https://github.com/HeitorLouzeiro/finance_app/issues
-[license-shield]: https://img.shields.io/github/license/HeitorLouzeiro/finance_app.svg?style=for-the-badge
-[license-url]: https://github.com/HeitorLouzeiro/finance_app/blob/master/license
+[contributors-shield]: https://img.shields.io/github/contributors/HeitorLouzeiro/finance-app-flutter.svg?style=for-the-badge
+[contributors-url]: https://github.com/HeitorLouzeiro/finance-app-flutter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/HeitorLouzeiro/finance-app-flutter.svg?style=for-the-badge
+[forks-url]: https://github.com/HeitorLouzeiro/finance-app-flutter/network/members
+[stars-shield]: https://img.shields.io/github/stars/HeitorLouzeiro/finance-app-flutter.svg?style=for-the-badge
+[stars-url]: https://github.com/HeitorLouzeiro/finance-app-flutter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/HeitorLouzeiro/finance-app-flutter.svg?style=for-the-badge
+[issues-url]: https://github.com/HeitorLouzeiro/finance-app-flutter/issues
+[license-shield]: https://img.shields.io/github/license/HeitorLouzeiro/finance-app-flutter.svg?style=for-the-badge
+[license-url]: https://github.com/HeitorLouzeiro/finance-app-flutter/blob/master/license
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/heitor-louzeiro
 
