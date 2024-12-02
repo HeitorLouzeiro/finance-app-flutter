@@ -1,37 +1,52 @@
-import 'package:flutter/material.dart';
-import 'cadastro_investimento_page.dart';
-import 'comparacao_page.dart';
-import '../models/investimento.dart';
-import '../models/resultado_investimento.dart';
+import 'package:flutter/material.dart'; // Importa a biblioteca Flutter
+import 'cadastro_investimento_page.dart'; // Importa a página de cadastro de investimentos
+import 'comparacao_page.dart'; // Importa a página de comparação de investimentos
+import '../models/investimento.dart'; // Importa o modelo de investimento
+import '../models/resultado_investimento.dart'; // Importa o modelo de resultado de investimento
 
+/// Classe principal da página de carteira de investimentos.
 class WalletPage extends StatefulWidget {
-  const WalletPage({super.key});
+  const WalletPage({super.key}); // Construtor padrão da classe
 
   @override
-  State createState() => _WalletPageState();
+  State createState() => _WalletPageState(); // Define o estado da página
 }
 
-class _WalletPageState extends State {
+class _WalletPageState extends State<WalletPage> {
+  // Classe interna para gerenciar o estado da página
+  /// Controller para o campo de texto do período em meses.
   final TextEditingController _mesesController = TextEditingController();
+
+  /// Lista para armazenar os investimentos cadastrados.
   final List<Investimento> _investimentos = [];
 
   @override
   Widget build(BuildContext context) {
+    // Método responsável pela construção da interface
     return Scaffold(
+      // Estrutura básica da página
       appBar: AppBar(
-        title: const Text('Comparador de Investimentos'),
+        // Barra superior da página
+        title: const Text('Comparador de Investimentos'), // Título da barra superior
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        // Espaçamento interno da página
+        padding: const EdgeInsets.all(16.0), // Margens uniformes de 16 pixels
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // Organiza os elementos verticamente
+          crossAxisAlignment: CrossAxisAlignment.start, // Alinha os itens no início da linha
           children: [
+            // Lista de filhos da Column
+            /// Título da seção de investimentos cadastrados.
             const Text(
               'Investimentos Cadastrados:',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 16), // Espaçamento entre o título e a lista
+
+            /// Exibe os investimentos cadastrados em uma lista.
             Expanded(
+              // Expande o espaço para ocupar todo o disponível
               child: _investimentos.isEmpty
                   ? const Center(child: Text('Nenhum investimento cadastrado.'))
                   : ListView.builder(
@@ -51,21 +66,29 @@ class _WalletPageState extends State {
                       },
                     ),
             ),
+
+            /// Campo para inserir o período em meses.
             _campoTexto(
               controller: _mesesController,
               label: 'Período (meses)',
               tipoTeclado: TextInputType.number,
             ),
             const SizedBox(height: 16),
+
+            /// Botões para adicionar e calcular investimentos.
             Row(
+              // Organiza os botões lado a lado
               children: [
                 Expanded(
+                  // Distribui o espaço igualmente entre os botões
                   child: ElevatedButton(
                     onPressed: _adicionarInvestimento,
                     child: const Text('Adicionar Investimento'),
                   ),
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: 8), // Espaçamento entre os botões
+
+                /// Botão para calcular e comparar os juros compostos.
                 Expanded(
                   child: ElevatedButton(
                     onPressed: _calcularJurosCompostos,
@@ -80,12 +103,13 @@ class _WalletPageState extends State {
     );
   }
 
-  /// Widget para criar campos de texto reutilizáveis
+  /// Widget para criar campos de texto reutilizáveis.
   Widget _campoTexto({
     required TextEditingController controller,
     required String label,
     TextInputType tipoTeclado = TextInputType.number,
   }) {
+    // Método auxiliar para criar campos de texto personalizados
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextFormField(
@@ -99,7 +123,7 @@ class _WalletPageState extends State {
     );
   }
 
-  /// Adicionar um novo investimento
+  /// Adiciona um novo investimento à lista e abre a página de cadastro.
   void _adicionarInvestimento() {
     Navigator.push(
       context,
@@ -115,7 +139,7 @@ class _WalletPageState extends State {
     );
   }
 
-  /// Editar um investimento existente
+  /// Edita um investimento existente na lista e abre a página de cadastro.
   void _editarInvestimento(int index) {
     Navigator.push(
       context,
@@ -132,7 +156,7 @@ class _WalletPageState extends State {
     );
   }
 
-  /// Calcular os juros compostos
+  /// Calcula os juros compostos para todos os investimentos e abre a página de comparação.
   void _calcularJurosCompostos() {
     if (_mesesController.text.isEmpty || _investimentos.isEmpty) {
       _mostrarAlerta('Por favor, preencha todos os campos e adicione pelo menos um investimento!');
@@ -152,7 +176,7 @@ class _WalletPageState extends State {
     );
   }
 
-  /// Mostrar alerta
+  /// Mostra uma mensagem de alerta ao usuário.
   void _mostrarAlerta(String mensagem) {
     showDialog(
       context: context,
